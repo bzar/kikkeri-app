@@ -59,7 +59,7 @@ A client application for a [kikkeri][] server. Intended to be used on a Raspberr
     ./kikkeri-app -platform eglfs
     ```
 
-Note that since the application is running in "kiosk mode" there's no way to exit it. SSH in and kill it with a SIGTERM for a clean shutdown.
+You can close the application with the keyboard shortcut Ctrl-M or by sending it SIGTERM.
 
 Now use regular systemd methods to make the application start on startup.
 

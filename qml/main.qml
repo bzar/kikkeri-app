@@ -18,6 +18,12 @@ ApplicationWindow {
   Material.theme: Material.Dark
   Material.accent: goforeOrange
   Material.background: goforeBlue
+
+  Shortcut {
+    sequence: "Ctrl+M"
+    onActivated: window.close()
+  }
+
   KikkeriClient {
     id: client
     siteUrl: Config.SITE_URL
