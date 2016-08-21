@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Keyboard.qml</file>
+        <file>RecordPage.qml</file>
+        <file>KikkeriClient.qml</file>
+        <file>BrowsePage.qml</file>
+        <file>LatestGames.qml</file>
+        <file>util.js</file>
+        <file>GameItem.qml</file>
+        <file>FilteredGames.qml</file>
+        <file>TagsSelect.qml</file>
+        <file>PlayerSelect.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>LetterKey.qml</file>
+        <file>KeyRows.qml</file>
+        <file>KeyRow.qml</file>
+        <file>KeyboardKey.qml</file>
+        <file>ScoreSlider.qml</file>
+        <file>TagsInput.qml</file>
+        <file>TeamInput.qml</file>
+        <file>config.js</file>
+    </qresource>
+</RCC>
