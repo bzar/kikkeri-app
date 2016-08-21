@@ -38,11 +38,17 @@ A client application for a [kikkeri][] server. Intended to be used on a Raspberr
     ```
 
 1. Reboot
-1. Clone this repo and compile
+1. Clone this repo
 
     ```bash
     git clone https://github.com/bzar/kikkeri-app
     cd kikkeri-app
+    ```
+
+1. Edit `qml/config.js` variable `SITE_URL` to point to your [kikkeri][] instance
+1. Compile
+
+    ```bash
     qmake
     make -j4
     ```
