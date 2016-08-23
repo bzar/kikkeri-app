@@ -32,9 +32,14 @@ A client application for a [kikkeri][] server. Intended to be used on a Raspberr
 
     ```bash
     groupadd backlight
+    groupmems -g backlight -a alarm
+    ```
+
+1. Set the following commands to happen at boot, for example with a oneshot systemd unit
+
+    ```bash
     chgrp backlight /sys/class/backlight/rpi_backlight/bl_power
     chmod g+w /sys/class/backlight/rpi_backlight/bl_power
-    groupmems -g backlight -a alarm
     ```
 
 1. Reboot
