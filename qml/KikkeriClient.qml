@@ -30,6 +30,19 @@ Item {
   function updateLatestGames(err) {
     Util.get(siteUrl + "/game/?limit=20", function(req) {
       latestGames = JSON.parse(req.response);
+      for(var i = 0; i < latestGames.length; ++i) {
+        var game = latestGames[i];
+        for(var t = 0; t < game.teams.length; ++t) {
+          var team = game.teams[t];
+          for(var p = 0; p < team.players.length; ++p) {
+            var name = team.players[p];
+            if(players.indexOf(name) === -1) {
+              players.push(name);
+            }
+          }
+        }
+      }
+      players.sort();
     }, function(req) {
       error(req.status, req.statusText);
       if(err) err(req);
