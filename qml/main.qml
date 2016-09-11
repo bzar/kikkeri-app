@@ -78,17 +78,17 @@ ApplicationWindow {
     id: backlightTimer
     interval: 1000*60*5
     onTriggered: backlight.state = false
-    running: true
+    running: backlight.state
     repeat: false
   }
 
   MouseArea {
     id: wakeupOverlay
     anchors.fill: parent
-    enabled: !backlight.state
-    onClicked: {
+    onPressed: {
       backlight.state = true;
-      backlightTimer.start();
+      backlightTimer.restart();
+      mouse.accepted = false;
     }
   }
 

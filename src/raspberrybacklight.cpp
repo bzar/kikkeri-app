@@ -22,19 +22,23 @@ void RaspberryBacklight::setState(bool value)
 {
   QFile file(BACKLIGHT_FILE);
   file.open(QFile::WriteOnly);
-  file.write(value ? "0" : "1");
-  file.close();
-  reloadState();
+  if(file.isOpen()) {
+    file.write(value ? "0" : "1");
+    file.close();
+    reloadState();
+  }
 }
 
 void RaspberryBacklight::reloadState()
 {
   QFile file(BACKLIGHT_FILE);
   file.open(QFile::ReadOnly);
-  QByteArray content = file.read(1);
-  bool newState = !content.startsWith("1");
-  if(state != newState) {
-    state = newState;
-    emit stateChanged(state);
+  if(file.isOpen()) {
+    QByteArray content = file.read(1);
+    bool newState = !content.startsWith("1");
+    if(state != newState) {
+      state = newState;
+      emit stateChanged(state);
+    }
   }
 }
