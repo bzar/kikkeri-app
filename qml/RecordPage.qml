@@ -9,6 +9,13 @@ Page {
     anchors.fill: parent
     z: 99
 
+    onVisibleChanged: {
+      if(!visible) {
+        playerSelect.visible = false
+        tagsSelect.visible = false
+      }
+    }
+
     MouseArea {
       anchors.fill: parent
       onClicked: parent.visible = false
