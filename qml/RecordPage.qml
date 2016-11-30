@@ -35,7 +35,7 @@ Page {
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.topMargin: 32
       anchors.bottomMargin: 32
-      width: 400
+      width: 600
 
       onSelect: {
         caller.players.append({name: name})
@@ -57,7 +57,7 @@ Page {
       anchors.horizontalCenter: parent.horizontalCenter
       anchors.topMargin: 32
       anchors.bottomMargin: 32
-      width: 400
+      width: 600
 
       onSelect: {
         for(var i = 0; i < names.length; ++i) {

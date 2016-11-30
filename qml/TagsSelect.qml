@@ -26,12 +26,15 @@ Rectangle {
       onClicked: select(tagInput.text.split(" ").filter(function(x) { return x; }))
     }
   }
-  ListView {
+  GridView {
+    id: grid
     anchors.top: input.bottom
     anchors.left: parent.left
     anchors.right: parent.right
     anchors.bottom: parent.bottom
     anchors.margins: 16
+    cellWidth: width / 3
+    cellHeight: 64
 
     clip: true
 
@@ -72,13 +75,16 @@ Rectangle {
         }
       }
     }
-    delegate: Button {
-      text: modelData
-      anchors.left: parent.left
-      anchors.right: parent.right
-      anchors.margins: 8
-      onClicked: tagInput.text += " " + modelData
+    delegate: Item {
+      width: grid.cellWidth
+      height: grid.cellHeight
+      Button {
+        text: modelData
+        anchors.fill: parent
+        anchors.leftMargin: 4
+        anchors.rightMargin: 4
+        onClicked: tagInput.text += " " + modelData
+      }
     }
-
   }
 }
