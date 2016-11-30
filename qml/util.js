@@ -56,21 +56,23 @@ function listmodel2array(model) {
 function fuzzysince(date) {
   var now = new Date();
   now.setHours(0, 0, 0, 0);
-
   var delta =  now - date;
-  var days = parseInt(delta / (1000*60*60*24)) + 1;
-  if(days < 0) {
+
+  if(delta <= 0) {
     return qsTr("tänään");
-  } else if(days === 1) {
-    return qsTr("eilen");
-  } else if(days < 7) {
-    return qsTr(days + " päivää")
-  } else if(days < 30) {
-    return qsTr(parseInt(days/7) + " viikkoa")
-  } else if(days < 365) {
-    return qsTr(parseInt(days/30) + " kuukautta")
   } else {
-    return qsTr(parseInt(days/365) + " vuotta")
+    var days = parseInt(delta / (1000*60*60*24)) + 1;
+    if(days === 1) {
+      return qsTr("eilen");
+    } else if(days < 7) {
+      return qsTr(days + " päivää")
+    } else if(days < 30) {
+      return qsTr(parseInt(days/7) + " viikkoa")
+    } else if(days < 365) {
+      return qsTr(parseInt(days/30) + " kuukautta")
+    } else {
+      return qsTr(parseInt(days/365) + " vuotta")
+    }
   }
 
 }
