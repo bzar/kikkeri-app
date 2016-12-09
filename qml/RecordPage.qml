@@ -160,6 +160,9 @@ Page {
               tags: namesToArray(tags.tags)
             };
 
+            score1.score = 0;
+            score2.score = 0;
+
             client.submit(game);
 
             function namesToArray(model) {
