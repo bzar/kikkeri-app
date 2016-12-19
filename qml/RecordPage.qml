@@ -160,8 +160,8 @@ Page {
               tags: namesToArray(tags.tags)
             };
 
-            score1.score = 0;
-            score2.score = 0;
+            score1.setScore(0);
+            score2.setScore(0);
 
             client.submit(game);
 

@@ -3,6 +3,10 @@ import QtQuick.Controls 2.0
 
 Row {
   property int score: slider.position * 10
+  function setScore(value) {
+    slider.value = value;
+  }
+
   Slider {
     id: slider
     from: 0
